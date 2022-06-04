@@ -1,0 +1,62 @@
+[{
+    "code": 1,
+    "messages": [{
+        "text": "Olá, eu sou Drake! Seu assistente de Inglês Instrumental",
+        "links": ["http://www.google.com"]
+    }, {
+        "text": "Em que tipo de matéria você está precisando de ajuda hoje?"
+    }],
+    "errorMessages": [{
+        "text": "Desculpa, eu acho que não consigo te ajudar com essa matéria, porém podemos ver que você possa se interessar."
+    },{
+        "text": "Em que tipo de matéria você está precisando de ajuda hoje?"
+    }],
+    "inputType": "textfield",
+    "options": [{
+        "texts": ["skimming", "skiming"],
+        "goto": 2
+    }]
+}, {
+    "code": 2,
+    "messages": [{
+        "text": "Este é um texto sobre Skimming"
+    }, {
+        "text": "Esse aqui foi o texto explicativo que separei para você, quer ver mais uns exemplos de como aplicar isso?"
+    }],
+    "errorMessages": [],
+    "inputType": "buttons",
+    "buttons": [{
+        "text": "Sim"
+    }, {
+        "text": "Não"
+    }],
+    "options": [{
+        "texts": "não",
+        "goto": 3
+    }]
+}, {
+    "code": 3,
+    "messages": [{
+        "text": "Sem problemas, deseja selecionar outro tópico de estudo?"
+    }],
+    "errorMessages": [],
+    "inputType": "buttons",
+    "buttons": [{
+        "text": "Sim"
+    }, {
+        "text": "Não"
+    }],
+    "options": [{
+        "texts": "não",
+        "goto": 4
+    }]
+},{
+    "code": 4,
+    "messages": [{
+        "text": "Ok, finalizamos por hoje, tenha um ótimo dia!"
+    }],
+    "errorMessages": [],
+    "inputType": "textfield",
+    "options": [],
+    "isRestartChat": true
+}]

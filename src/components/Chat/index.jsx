@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Chat = ({ messageList }) => {
+const Chat = ({ messageList, chatContentRef }) => {
     return (
-        <ChatWrapper>
+        <ChatWrapper ref={chatContentRef}>
             {messageList.map((message, index) => (
                 <ChatMessage
                     personal={message.personal}
@@ -14,6 +14,17 @@ const Chat = ({ messageList }) => {
                             src={message.content.image} 
                             alt={message.content.image}/>
                     ) : ''}
+                    {message.content.links ? message.content.links.map((link, index) => (
+                        <p>
+                            <a
+                                href={link}
+                                key={index}
+                                target="_blank" 
+                                rel="noreferrer">
+                                {link}
+                            </a>
+                        </p>
+                    )) : ''}
                 </ChatMessage>
             ))}
         </ChatWrapper>
@@ -47,14 +58,14 @@ const ChatMessage = styled.div`
     img {
         width: 50%;
         margin: 0 auto;
-    }
-    img {
-        width: 100%;
         border-radius: 10px;
         box-shadow:
             0 6px 12px 2px rgb(0 0 0 / 14%), 
             0 3px 15px 5px rgb(0 0 0 / 12%), 
             0 4px 5px -5px rgb(0 0 0 / 10%);
+    }
+    a {
+        color: ${(props) => props.personal ? '#000' : '#fff'};
     }
 `
 

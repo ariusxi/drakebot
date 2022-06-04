@@ -35,7 +35,7 @@ const HeaderName = styled.label`
     line-height: 8vh;
     margin-left: 15px;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: bold;
 `
 
 export default Header
