@@ -1,8 +1,7 @@
 [{
     "code": 1,
     "messages": [{
-        "text": "Olá, eu sou Drake! Seu assistente de Inglês Instrumental",
-        "links": ["http://www.google.com"]
+        "text": "Olá, eu sou Drake! Seu assistente de Inglês Instrumental"
     }, {
         "text": "Em que tipo de matéria você está precisando de ajuda hoje?"
     }],
@@ -19,7 +18,7 @@
 }, {
     "code": 2,
     "messages": [{
-        "text": "Este é um texto sobre Skimming"
+        "text": "A leitura rápida (skimming) permite que os leitores identifiquem rapidamente a ideia principal de um texto. É mais abrangente que a digitalização, e o leitor precisa ter mais conhecimento da organização do texto, da percepção e inferência do vocabulário, das habilidades de decodificação, compreensão e interpretação das ideias do texto. Skimming é melhor usado quando você tem muito para ler e não tem muito tempo para ler.<br/><br/>Usando esta técnica, a digitalização é três a quatro vezes mais rápida do que a digitalização normal. Uma das funções dessa tecnologia é destacar vários aspectos do texto. A partir de agora, a leitura pode ser um pouco mais complicada, pois você pode precisar de informações sobre determinada pessoa ou determinado assunto. Esse tipo de leitura exige atenção e atenção para corrigir a pontuação e não se perder no meio do texto e encontrar informações erradas.<br/><br/>Uma coisa importante a fazer neste tipo de leitura é encontrar (a partir do contexto) o sujeito do texto, depois encontrar o verbo e se existe um objeto direto. Quando você define o tópico, tudo o que se segue fica mais fácil de entender. Isso permitirá que você descubra a função principal do texto, não o significado geral. Você não precisa se preocupar com os detalhes do texto, basta focar no conteúdo principal que você precisa, nas informações que procura, ler o título e subtítulo, o primeiro e o último parágrafos para chegar ao objetivo final."
     }, {
         "text": "Esse aqui foi o texto explicativo que separei para você, quer ver mais uns exemplos de como aplicar isso?"
     }],
@@ -31,6 +30,9 @@
         "text": "Não"
     }],
     "options": [{
+        "texts": "sim",
+        "goto": 5
+    },{
         "texts": "não",
         "goto": 3
     }]
@@ -59,4 +61,46 @@
     "inputType": "textfield",
     "options": [],
     "isRestartChat": true
+},{
+    "code": 5,
+    "messages": [{
+        "text": "Skimming: observamos o texto para ver o assunto geral, assim como assistimos o trailer de filme ou série.<br/><br/>Exercício-exemplo: Sinopse do filme Encanto da Disney<br/>Encanto da Walt Disney Animation Studios conta a história dos Madrigal, uma família extraordinária que vive escondida nas montanhas da Colômbia, em uma casa mágica, em uma cidade vibrante, em um lugar maravilhoso conhecido como um Encanto. A magia deste Encanto abençoou todos os meninos e meninas da família com um dom único, desde superforça até o poder de curar. Todos, exceto Mirabel. Mas, quando ela descobre que a magia que cerca o Encanto está em perigo, Mirabel decide que ela, a única Madrigal sem poderes mágicos, pode ser a última esperança de sua família excepcional.<br/><br/>Qual é o assunto geral do filme?<br/><ol><li>Sobre uma princesa falando de seu próprio encanto.</li><li>Sobre uma família mexicana e de seus falecidos entes queridos.</li><li>Sobre uma garota sem poderes que pode salvar sua família. (correta)</li></ol><br/>Let’s Exercise! (Vamos nos exercitar): What is Artificial Intelligence?<br/>'It is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that are biologically observable.' - IBM<br/><br/>Qual é o assunto do texto?<ol><li>É sobre uma inteligência artificial. (correta)</li><li>É sobre um óculos inteligente.</li><li>É sobre uma agência de inteligência.</li><li>É sobre uma aula inteligente.</li><li>É sobre uma máquina.</li></ol><br/>Dica: No português algumas palavras se parecem com as palavras em inglês, elas são chamadas de palavras cognatas (Cognate Word), sua forma de escrita e significado são iguais, e as duas palavras vêm da mesma origem. <br/>Exemplos: Radio = Rádio<br/>Success = Sucesso<br/>Paper = Papel<br/>Example = Exemplo"
+    }, {
+        "text": "Aqui estão também alguns artigos que separei para você:",
+        "links": [
+            "https://inglesinstrumentalonline.com.br/blog/scanning-e-skimming-os-metodos-de-leitura-do-ingles-instrumental/#:~:text=Esta%20pr%C3%A1tica%20consiste%20em%20observarmos,imagens%2C%20gr%C3%A1ficos%2C%20tabelas%20etc.",
+            "http://www.cclinet.com.br/noticia/skimming-e-scanning-estrategias-de-leitura-para-textos-em-linguas-estrangeiras/"
+        ]
+    },{
+        "text": "Acho que é isso que tinha para te mostrar, deseja continuar?"
+    }],
+    "errorMessages": [],
+    "inputType": "buttons",
+    "buttons": [{
+        "text": "Sim"
+    },{
+        "text": "Não"
+    }],
+    "options": [{
+        "texts": "sim",
+        "goto": 6
+    },{
+        "texts": "não",
+        "goto": 4
+    }]
+},{
+    "code": 6,
+    "messages": [{
+        "text": "Em que tipo de matéria você está precisando de ajuda hoje?"
+    }],
+    "errorMessages": [{
+        "text": "Desculpa, eu acho que não consigo te ajudar com essa matéria, porém podemos ver que você possa se interessar."
+    },{
+        "text": "Em que tipo de matéria você está precisando de ajuda hoje?"
+    }],
+    "inputType": "textfield",
+    "options": [{
+        "texts": ["skimming", "skiming"],
+        "goto": 2
+    }]
 }]

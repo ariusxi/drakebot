@@ -34,7 +34,7 @@ const HeaderName = styled.label`
     justify-content: flex-start;
     line-height: 8vh;
     margin-left: 15px;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: bold;
 `
 

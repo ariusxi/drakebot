@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import Header from './../components/Header'
@@ -10,8 +10,6 @@ import DecisionTree from './../data/tree.json'
 import BotIcon from './../assets/imgs/bot_icon.png'
 
 class Main extends Component {
-
-    chatContentRef = createRef()
 
     state = {
         treeIndex: 0,
@@ -28,9 +26,9 @@ class Main extends Component {
         this.sendMessage = this.sendMessage.bind(this)
         this.showWelcomeChat()
     }
-    
-    scrollToBottom() {
-        this.chatContentRef.current.scrollIntoView({ behavior: 'smooth' })
+
+    componentDidMount() {
+        document.title = 'Drakebot'
     }
 
     showWelcomeChat(messageText = null) {
@@ -68,16 +66,12 @@ class Main extends Component {
     showMessage(messageContent, timeout = 500) {
         const self = this
         for (const message of messageContent) {
-            setTimeout(() => {
-                self.setState((prevState) => ({
-                    messageList: [
-                        ...prevState.messageList,
-                        ...[message],
-                    ],
-                }))
-
-                self.scrollToBottom()
-            }, timeout)
+            setTimeout(() => self.setState((prevState) => ({
+                messageList: [
+                    ...prevState.messageList,
+                    ...[message],
+                ],
+            })), timeout)
         }
 
     }
@@ -148,9 +142,7 @@ class Main extends Component {
         return (
             <MainWrapper>
                 <Header botName="Drake" botIcon={BotIcon}/>
-                <Chat
-                    chatContentRef={this.chatContentRef}
-                    messageList={messageList}/>
+                <Chat messageList={messageList}/>
                 <MessageInput 
                     sendMessage={this.sendMessage}
                     inputType={inputType}

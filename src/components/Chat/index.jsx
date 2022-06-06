@@ -1,32 +1,36 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import styled from 'styled-components'
+import { LinkPreview } from '@dhaiwat10/react-link-preview'
 
-const Chat = ({ messageList, chatContentRef }) => {
+const Chat = ({ messageList }) => {
+    const chatListRef = useRef(null)
+
+    useEffect(() => chatListRef.current.scrollIntoView({
+        behavior: 'smooth',
+    }), [messageList])
+
     return (
-        <ChatWrapper ref={chatContentRef}>
-            {messageList.map((message, index) => (
-                <ChatMessage
-                    personal={message.personal}
-                    key={index}>
-                    {message.content.text}
-                    {message.content.image ? (
-                        <img 
-                            src={message.content.image} 
-                            alt={message.content.image}/>
-                    ) : ''}
-                    {message.content.links ? message.content.links.map((link, index) => (
-                        <p>
-                            <a
-                                href={link}
-                                key={index}
-                                target="_blank" 
-                                rel="noreferrer">
-                                {link}
-                            </a>
-                        </p>
-                    )) : ''}
-                </ChatMessage>
-            ))}
+        <ChatWrapper>
+            <ChatLinkContainer>
+                {messageList.map((message, index) => (
+                    <ChatMessage
+                        personal={message.personal}
+                        key={index}>
+                        <p dangerouslySetInnerHTML={{ __html: message.content.text }}></p>
+                        {message.content.image ? (
+                            <img 
+                                src={message.content.image} 
+                                alt={message.content.image}/>
+                        ) : ''}
+                        {message.content.links ? message.content.links.map((link, index) => (
+                            <ChatLinkContainer key={index}>
+                                <LinkPreview url={link}/>
+                            </ChatLinkContainer>
+                        )) : ''}
+                    </ChatMessage>
+                ))}
+            </ChatLinkContainer>
+            <ChatScroll ref={chatListRef}/>
         </ChatWrapper>
     )
 }
@@ -35,12 +39,14 @@ const ChatWrapper = styled.div`
     width: 100%;
     height: 100%;
     display: block;
+    position: relative;
     overflow-y: scroll;
     clear: both;
 `
 
 const ChatMessage = styled.div`
     clear: both;
+    max-width: 65%;
     float: ${(props) => props.personal ? 'right' : 'left'};
     padding: 6px 10px 7px;
     border-radius: ${(props) => props.personal ? '10px 10px 0 10px' : '10px 10px 10px 0'};
@@ -54,6 +60,9 @@ const ChatMessage = styled.div`
     animation: bounce 500ms linear both;
     p {
         width: 100%;
+        .Container {
+            margin-top: 10px;
+        }
     }
     img {
         width: 50%;
@@ -65,8 +74,28 @@ const ChatMessage = styled.div`
             0 4px 5px -5px rgb(0 0 0 / 10%);
     }
     a {
-        color: ${(props) => props.personal ? '#000' : '#fff'};
+        color: #000;
     }
+    ol {
+        margin-left: 20px;
+    }
+    .Container {
+        margin-top: 10px;
+    }
+`
+
+const ChatLinkContainer = styled.div`
+    width: 100%;
+    display: block;
+    position: relative;
+    float: left;
+`
+
+const ChatScroll = styled.div`
+    width: 100%;
+    height: 1px;
+    float: left;
+    position: relative;
 `
 
 export default Chat

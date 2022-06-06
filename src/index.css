@@ -6,6 +6,7 @@
 :root {
   --header-background-color: #404451;
   --header-text-color: #fff;
+  --header-icon-border-color: #ac423a;
 
   --message-input-background-color: #404451;
   --message-input-field-border-color: #31333b;
