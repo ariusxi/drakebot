@@ -1,106 +1,449 @@
-[{
+[
+  {
     "code": 1,
-    "messages": [{
+    "messages": [
+      {
         "text": "Olá, eu sou Drake! Seu assistente de Inglês Instrumental"
-    }, {
+      },
+      {
         "text": "Em que tipo de matéria você está precisando de ajuda hoje?"
-    }],
-    "errorMessages": [{
+      }
+    ],
+    "errorMessages": [
+      {
         "text": "Desculpa, eu acho que não consigo te ajudar com essa matéria, porém podemos ver que você possa se interessar."
-    },{
+      },
+      {
         "text": "Em que tipo de matéria você está precisando de ajuda hoje?"
-    }],
+      }
+    ],
     "inputType": "textfield",
-    "options": [{
+    "options": [
+      {
         "texts": ["skimming", "skiming"],
         "goto": 2
-    }]
-}, {
+      },
+      {
+        "texts": ["scanning", "scaning"],
+        "goto": 7
+      },
+      {
+        "texts": [
+			"palavra cognata", 
+			"palavras cognatas",
+			"palavras cognata",
+			"palavra cognatas",
+			"cognato", 
+			"cognatos"
+		],
+        "goto": 9
+      },
+      {
+        "texts": [
+          "falso cognato",
+          "falsos cognatos",
+          "falsos cognato",
+          "falso cognatos"
+        ],
+        "goto": 10
+      }
+    ]
+  },
+  {
     "code": 2,
-    "messages": [{
+    "messages": [
+      {
         "text": "A leitura rápida (skimming) permite que os leitores identifiquem rapidamente a ideia principal de um texto. É mais abrangente que a digitalização, e o leitor precisa ter mais conhecimento da organização do texto, da percepção e inferência do vocabulário, das habilidades de decodificação, compreensão e interpretação das ideias do texto. Skimming é melhor usado quando você tem muito para ler e não tem muito tempo para ler.<br/><br/>Usando esta técnica, a digitalização é três a quatro vezes mais rápida do que a digitalização normal. Uma das funções dessa tecnologia é destacar vários aspectos do texto. A partir de agora, a leitura pode ser um pouco mais complicada, pois você pode precisar de informações sobre determinada pessoa ou determinado assunto. Esse tipo de leitura exige atenção e atenção para corrigir a pontuação e não se perder no meio do texto e encontrar informações erradas.<br/><br/>Uma coisa importante a fazer neste tipo de leitura é encontrar (a partir do contexto) o sujeito do texto, depois encontrar o verbo e se existe um objeto direto. Quando você define o tópico, tudo o que se segue fica mais fácil de entender. Isso permitirá que você descubra a função principal do texto, não o significado geral. Você não precisa se preocupar com os detalhes do texto, basta focar no conteúdo principal que você precisa, nas informações que procura, ler o título e subtítulo, o primeiro e o último parágrafos para chegar ao objetivo final."
-    }, {
+      },
+      {
         "text": "Esse aqui foi o texto explicativo que separei para você, quer ver mais uns exemplos de como aplicar isso?"
-    }],
+      }
+    ],
     "errorMessages": [],
     "inputType": "buttons",
-    "buttons": [{
+    "buttons": [
+      {
         "text": "Sim"
-    }, {
+      },
+      {
         "text": "Não"
-    }],
-    "options": [{
+      }
+    ],
+    "options": [
+      {
         "texts": "sim",
         "goto": 5
-    },{
+      },
+      {
         "texts": "não",
         "goto": 3
-    }]
-}, {
+      }
+    ]
+  },
+  {
     "code": 3,
-    "messages": [{
+    "messages": [
+      {
         "text": "Sem problemas, deseja selecionar outro tópico de estudo?"
-    }],
+      }
+    ],
     "errorMessages": [],
     "inputType": "buttons",
-    "buttons": [{
+    "buttons": [
+      {
         "text": "Sim"
-    }, {
+      },
+      {
         "text": "Não"
-    }],
-    "options": [{
+      }
+    ],
+    "options": [
+      {
+        "texts": "sim",
+        "goto": 6
+      },
+      {
         "texts": "não",
         "goto": 4
-    }]
-},{
+      }
+    ]
+  },
+  {
     "code": 4,
-    "messages": [{
+    "messages": [
+      {
         "text": "Ok, finalizamos por hoje, tenha um ótimo dia!"
-    }],
+      }
+    ],
     "errorMessages": [],
     "inputType": "textfield",
     "options": [],
     "isRestartChat": true
-},{
+  },
+  {
     "code": 5,
-    "messages": [{
-        "text": "Skimming: observamos o texto para ver o assunto geral, assim como assistimos o trailer de filme ou série.<br/><br/>Exercício-exemplo: Sinopse do filme Encanto da Disney<br/>Encanto da Walt Disney Animation Studios conta a história dos Madrigal, uma família extraordinária que vive escondida nas montanhas da Colômbia, em uma casa mágica, em uma cidade vibrante, em um lugar maravilhoso conhecido como um Encanto. A magia deste Encanto abençoou todos os meninos e meninas da família com um dom único, desde superforça até o poder de curar. Todos, exceto Mirabel. Mas, quando ela descobre que a magia que cerca o Encanto está em perigo, Mirabel decide que ela, a única Madrigal sem poderes mágicos, pode ser a última esperança de sua família excepcional.<br/><br/>Qual é o assunto geral do filme?<br/><ol><li>Sobre uma princesa falando de seu próprio encanto.</li><li>Sobre uma família mexicana e de seus falecidos entes queridos.</li><li>Sobre uma garota sem poderes que pode salvar sua família. (correta)</li></ol><br/>Let’s Exercise! (Vamos nos exercitar): What is Artificial Intelligence?<br/>'It is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that are biologically observable.' - IBM<br/><br/>Qual é o assunto do texto?<ol><li>É sobre uma inteligência artificial. (correta)</li><li>É sobre um óculos inteligente.</li><li>É sobre uma agência de inteligência.</li><li>É sobre uma aula inteligente.</li><li>É sobre uma máquina.</li></ol><br/>Dica: No português algumas palavras se parecem com as palavras em inglês, elas são chamadas de palavras cognatas (Cognate Word), sua forma de escrita e significado são iguais, e as duas palavras vêm da mesma origem. <br/>Exemplos: Radio = Rádio<br/>Success = Sucesso<br/>Paper = Papel<br/>Example = Exemplo"
-    }, {
+    "messages": [
+      {
+        "text": "Skimming: observamos o texto para ver o assunto geral, assim como assistimos o trailer de filme ou série.<br/><br/>Exercício-exemplo: Sinopse do filme Encanto da Disney<br/>Encanto da Walt Disney Animation Studios conta a história dos Madrigal, uma família extraordinária que vive escondida nas montanhas da Colômbia, em uma casa mágica, em uma cidade vibrante, em um lugar maravilhoso conhecido como um Encanto. A magia deste Encanto abençoou todos os meninos e meninas da família com um dom único, desde superforça até o poder de curar. Todos, exceto Mirabel. Mas, quando ela descobre que a magia que cerca o Encanto está em perigo, Mirabel decide que ela, a única Madrigal sem poderes mágicos, pode ser a última esperança de sua família excepcional.<br/><br/>Qual é o assunto geral do filme?<br/><ol><li>Sobre uma princesa falando de seu próprio encanto.</li><li>Sobre uma família mexicana e de seus falecidos entes queridos.</li><li>Sobre uma garota sem poderes que pode salvar sua família. (correta)</li></ol><br/>Let’s Exercise! (Vamos nos exercitar): What is Artificial Intelligence?<br/>'It is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that are biologically observable.' - IBM<br/><br/>Qual é o assunto do texto?<ol><li>É sobre uma inteligência artificial. (correta)</li><li>É sobre um óculos inteligente.</li><li>É sobre uma agência de inteligência.</li><li>É sobre uma aula inteligente.</li><li>É sobre uma máquina.</li></ol><br/>Dica: No português algumas palavras se parecem com as palavras em inglês, elas são chamadas de palavras cognatas (Cognate Word), sua forma de escrita e significado são iguais, e as duas palavras vêm da mesma origem. <br/>Exemplos: Radio = Rádio<br/>Success = Sucesso<br/>Paper = Papel<br/>Example = Exemplo"
+      },
+      {
         "text": "Aqui estão também alguns artigos que separei para você:",
         "links": [
-            "https://inglesinstrumentalonline.com.br/blog/scanning-e-skimming-os-metodos-de-leitura-do-ingles-instrumental/#:~:text=Esta%20pr%C3%A1tica%20consiste%20em%20observarmos,imagens%2C%20gr%C3%A1ficos%2C%20tabelas%20etc.",
-            "http://www.cclinet.com.br/noticia/skimming-e-scanning-estrategias-de-leitura-para-textos-em-linguas-estrangeiras/"
+          "https://inglesinstrumentalonline.com.br/blog/scanning-e-skimming-os-metodos-de-leitura-do-ingles-instrumental/#:~:text=Esta%20pr%C3%A1tica%20consiste%20em%20observarmos,imagens%2C%20gr%C3%A1ficos%2C%20tabelas%20etc.",
+          "http://www.cclinet.com.br/noticia/skimming-e-scanning-estrategias-de-leitura-para-textos-em-linguas-estrangeiras/"
         ]
-    },{
+      },
+      {
         "text": "Acho que é isso que tinha para te mostrar, deseja continuar?"
-    }],
+      }
+    ],
     "errorMessages": [],
     "inputType": "buttons",
-    "buttons": [{
+    "buttons": [
+      {
         "text": "Sim"
-    },{
+      },
+      {
         "text": "Não"
-    }],
-    "options": [{
+      }
+    ],
+    "options": [
+      {
         "texts": "sim",
         "goto": 6
-    },{
+      },
+      {
         "texts": "não",
         "goto": 4
-    }]
-},{
+      }
+    ]
+  },
+  {
     "code": 6,
-    "messages": [{
+    "messages": [
+      {
         "text": "Em que tipo de matéria você está precisando de ajuda hoje?"
-    }],
-    "errorMessages": [{
+      }
+    ],
+    "errorMessages": [
+      {
         "text": "Desculpa, eu acho que não consigo te ajudar com essa matéria, porém podemos ver que você possa se interessar."
-    },{
+      },
+      {
         "text": "Em que tipo de matéria você está precisando de ajuda hoje?"
-    }],
+      }
+    ],
     "inputType": "textfield",
-    "options": [{
+    "options": [
+      {
         "texts": ["skimming", "skiming"],
         "goto": 2
-    }]
-}]
+      },
+      {
+        "texts": ["scanning", "scaning"],
+        "goto": 7
+      },
+      {
+        "texts": [
+			"palavra cognata", 
+			"palavras cognatas",
+			"palavras cognata",
+			"palavra cognatas",
+			"cognato", 
+			"cognatos"
+		],
+        "goto": 9
+      },
+      {
+        "texts": [
+          "falso cognato",
+          "falsos cognatos",
+          "falsos cognato",
+          "falso cognatos"
+        ],
+        "goto": 10
+      }
+    ]
+  },
+  {
+    "code": 7,
+    "messages": [
+      {
+        "text": "O Scanning, em um sentido mais amplo, eu diria “digitalização” de texto. O verbo “escanear”, escanear, é examinar em detalhes, codificar as informações da frase, selecionar o vocabulário necessário e encontrar os detalhes relevantes para a resposta. <br/><br/>É como se folheasse a primeira página de um jornal, procurasse uma palavra num dicionário ou pesquisasse um tópico específico na internet para buscar informações específicas que você precisa no momento, etc."
+      },
+      {
+        "text": "Esse aqui foi o texto explicativo que separei para você, quer ver mais uns exemplos de como aplicar isso?"
+      }
+    ],
+    "inputType": "buttons",
+    "buttons": [
+      {
+        "text": "Sim"
+      },
+      {
+        "text": "Não"
+      }
+    ],
+    "options": [
+      {
+        "texts": "sim",
+        "goto": 8
+      },
+      {
+        "texts": "não",
+        "goto": 3
+      }
+    ]
+  },
+  {
+    "code": 8,
+    "messages": [
+      {
+        "text": "Aqui está um artigo para você entender melhor:",
+        "links": [
+          "https://www.utc.edu/enrollment-management-and-student-affairs/center-for-academic-support-and-advisement/tips-for-academic-success/skimming"
+        ]
+      },
+      {
+        "text": "Acho que é isso que tinha para te mostrar, deseja continuar?"
+      }
+    ],
+    "inputType": "buttons",
+    "buttons": [
+      {
+        "text": "Sim"
+      },
+      {
+        "text": "Não"
+      }
+    ],
+    "options": [
+      {
+        "texts": "sim",
+        "goto": 6
+      },
+      {
+        "texts": "não",
+        "goto": 4
+      }
+    ]
+  },
+  {
+    "code": 9,
+    "messages": [
+      {
+        "text": "Palavras Cognatas são aquelas que apresentam a mesma origem que as que usamos em português. Com isso, as grafias são iguais ou semelhantes e o significado é o mesmo, no máximo com pequenas discrepâncias. Com isso, elas são fáceis de serem identificadas e lidas, ajudando na compreensão geral do texto, que é o que ensina o método de inglês instrumental."
+      },
+      {
+        "text": "Quer aprender sobre falsos cognatos também?"
+      }
+    ],
+    "inputType": "buttons",
+    "buttons": [
+      {
+        "text": "Sim"
+      },
+      {
+        "text": "Não"
+      }
+    ],
+    "options": [
+      {
+        "texts": "sim",
+        "goto": 10
+      },
+      {
+        "texts": "não",
+        "goto": 11
+      }
+    ]
+  },
+  {
+    "code": 10,
+    "messages": [
+      {
+        "text": "São palavras semelhantes em ambas as línguas, mas têm significados diferentes. Um exemplo em inglês é preconceito, que significa “preconceito”, não preconceito como parece. Na sala de aula, se contextualizados, muitas vezes não se tornam uma armadilha para leitores experientes que perceberão que o significado não condiz com o contexto. Leia a tabela abaixo para outros falsos cognatos entre português e inglês.",
+        "image": "https://nova-escola-producao.s3.amazonaws.com/dWs92WdZ76KvFxADzQCsq294SnAXUYArMKnpnd7UpDUsBHQNhkc69aT8353B/tabela-falsos-cognatos.jpg"
+      },
+      {
+        "text": "Quer aprender sobre cognatos também?"
+      }
+    ],
+    "inputType": "buttons",
+    "buttons": [
+      {
+        "text": "Sim"
+      },
+      {
+        "text": "Não"
+      }
+    ],
+    "options": [
+      {
+        "texts": "sim",
+        "goto": 9
+      },
+      {
+        "texts": "não",
+        "goto": 13
+      }
+    ]
+  },
+  {
+    "code": 11,
+    "messages": [
+      {
+        "text": "Quer ver mais uns exemplos de como aplicar cognatos?"
+      }
+    ],
+    "inputType": "buttons",
+    "buttons": [
+      {
+        "text": "Sim"
+      },
+      {
+        "text": "Não"
+      }
+    ],
+    "options": [
+      {
+        "texts": "sim",
+        "goto": 12
+      },
+      {
+        "texts": "não",
+        "goto": 3
+      }
+    ]
+  },
+  {
+    "code": 12,
+    "messages": [
+      {
+        "text": "Conforme mencionado, palavras cognatas referem-se aquelas similares na forma e no conteúdo, o que facilita na identificação e compreensão geral do texto, mesmo que o indivíduo não conheça previamente os termos em questão. Porém, não pense você que essa situação só ocorre na língua inglesa. O português e diversos outros idiomas também abrigam palavras cognatas. Para ter uma melhor compreensão do significado desse termo é só entender a tradução de cognata: vocábulo derivado do latim que traduzido quer dizer palavras que nasceram juntas. Facilitou o entendimento?",
+        "links": [
+          "https://inglesinstrumentalonline.com.br/blog/palavras-cognatas-saiba-sua-importancia/"
+        ]
+      },
+      {
+        "text": "Acho que é isso que tinha para te mostrar, deseja continuar?"
+      }
+    ],
+    "inputType": "buttons",
+    "buttons": [
+      {
+        "text": "Sim"
+      },
+      {
+        "text": "Não"
+      }
+    ],
+    "options": [
+      {
+        "texts": "sim",
+        "goto": 6
+      },
+      {
+        "texts": "não",
+        "goto": 4
+      }
+    ]
+  },
+  {
+    "code": 13,
+    "messages": [
+      {
+        "text": "Quer ver mais uns exemplos de como aplicar falsos cognatos?"
+      }
+    ],
+    "inputType": "buttons",
+    "buttons": [
+      {
+        "text": "Sim"
+      },
+      {
+        "text": "Não"
+      }
+    ],
+    "options": [
+      {
+        "texts": "sim",
+        "goto": 14
+      },
+      {
+        "texts": "não",
+        "goto": 3
+      }
+    ]
+  },
+  {
+    "code": 14,
+    "messages": [
+      {
+        "text": "Falsos cognatos são palavras que são escritas de forma semelhante, mas possuem significados diferentes nos dois idiomas, então acabam criando alguma confusão e erros ao traduzir uma palavra de um idioma para outro; por exemplo, A palavra 'intent' em inglês é escrita exatamente da mesma forma. o mesmo que a palavra 'intent' em português, mas 'intent' em inglês significa fingir ou imitar em português, não pretender ou pretender fazer algo.<br/><br/>Importante: Não confundir com cognatos ingleses que possuem grafias semelhantes e o mesmo significado em português e inglês. <br/><br/> Existem toneladas de falsos cognatos em inglês."
+      },
+      {
+        "text": "Acho que é isso que tinha para te mostrar, deseja continuar?"
+      }
+    ],
+    "inputType": "buttons",
+    "buttons": [
+      {
+        "text": "Sim"
+      },
+      {
+        "text": "Não"
+      }
+    ],
+    "options": [
+      {
+        "texts": "sim",
+        "goto": 6
+      },
+      {
+        "texts": "não",
+        "goto": 4
+      }
+    ]
+  }
+]

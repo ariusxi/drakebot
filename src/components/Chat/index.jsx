@@ -17,6 +17,7 @@ const Chat = ({ messageList }) => {
                         personal={message.personal}
                         key={index}>
                         <p dangerouslySetInnerHTML={{ __html: message.content.text }}></p>
+                        {console.log(message.content)}
                         {message.content.image ? (
                             <img 
                                 src={message.content.image} 
@@ -65,8 +66,8 @@ const ChatMessage = styled.div`
         }
     }
     img {
-        width: 50%;
-        margin: 0 auto;
+        width: 100%;
+        margin-top: 10px;
         border-radius: 10px;
         box-shadow:
             0 6px 12px 2px rgb(0 0 0 / 14%), 

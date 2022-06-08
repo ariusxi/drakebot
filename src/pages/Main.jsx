@@ -119,6 +119,7 @@ class Main extends Component {
             personal: false,
             content: {
                 text: message.text,
+                image: message.image,
                 links: message.links,
             },
         }))
